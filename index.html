@@ -56,15 +56,17 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-s
 <div class="overlay" id="successOverlay"><div class="modal" style="text-align:center"><div style="font-size:48px">✓</div><h2>Buyurtma qabul qilindi!</h2><p class="hint">Buyurtmangiz demo admin panelda saqlandi.</p><button class="btn" onclick="document.getElementById('successOverlay').classList.remove('show')">Yopish</button></div></div>
 <script>
 const defaultProducts=[
-{id:1,name:"Klassik lavash",cat:"Lavash",price:26000,emoji:"🌯",desc:"Mazali go'sht, yangi sabzavotlar va maxsus sous.",image:"images/beef_lavash.jpg"},
-{id:2,name:"Pishloqli lavash",cat:"Lavash",price:30000,emoji:"🧀",desc:"Eritilgan pishloq va yumshoq lavash uyg'unligi.",image:"images/cheese_lavash.jpg"},
-{id:3,name:"Big lavash",cat:"Lavash",price:35000,emoji:"🌯",desc:"Katta porsiya, to'yimli va mazali tanlov.",image:"images/large_lavash.jpg"},
-{id:4,name:"Burger",cat:"Fast food",price:28000,emoji:"🍔",desc:"Yumshoq bulochka, kotlet va yangi sabzavotlar.",image:"images/burger.jpg"},
-{id:5,name:"Kartoshka fri",cat:"Fast food",price:15000,emoji:"🍟",desc:"Qarsildoq va mazali kartoshka fri.",image:"images/fries.jpg"},
-{id:6,name:"Hot-dog",cat:"Fast food",price:18000,emoji:"🌭",desc:"Maxsus sous bilan tayyorlangan hot-dog.",image:"images/hotdog.jpg"},
-{id:7,name:"Coca-Cola",cat:"Ichimliklar",price:10000,emoji:"🥤",desc:"Sovuq ichimlik, 0.5 litr.",image:"images/cola.jpg"},
-{id:8,name:"Sharbat",cat:"Ichimliklar",price:12000,emoji:"🧃",desc:"Mevali ichimlik.",image:"images/juice.jpg"},
-{id:9,name:"Muzqaymoq",cat:"Desert",price:12000,emoji:"🍨",desc:"Yoqimli shirin yakun.",image:"images/icecream.jpg"}
+const defaultProducts=[
+{id:1,name:"Klassik lavash",cat:"Lavash",price:26000,emoji:"🌯",desc:"Mazali go'sht, yangi sabzavotlar va maxsus sous.",image:"beef_lavash.jpg"},
+{id:2,name:"Pishloqli lavash",cat:"Lavash",price:30000,emoji:"🧀",desc:"Eritilgan pishloq va yumshoq lavash uyg'unligi.",image:"cheese_lavash.jpg"},
+{id:3,name:"Big lavash",cat:"Lavash",price:35000,emoji:"🌯",desc:"Katta porsiya, to'yimli va mazali tanlov.",image:"large_lavash.jpg"},
+{id:4,name:"Burger",cat:"Fast food",price:28000,emoji:"🍔",desc:"Yumshoq bulochka, kotlet va yangi sabzavotlar.",image:"burger.jpg"},
+{id:5,name:"Kartoshka fri",cat:"Fast food",price:15000,emoji:"🍟",desc:"Qarsildoq va mazali kartoshka fri.",image:"fries.jpg"},
+{id:6,name:"Hot-dog",cat:"Fast food",price:18000,emoji:"🌭",desc:"Maxsus sous bilan tayyorlangan hot-dog.",image:"hotdog.jpg"},
+{id:7,name:"Coca-Cola",cat:"Ichimliklar",price:10000,emoji:"🥤",desc:"Sovuq ichimlik, 0.5 litr.",image:"cola.jpg"},
+{id:8,name:"Sharbat",cat:"Ichimliklar",price:12000,emoji:"🧃",desc:"Mevali ichimlik.",image:"juice.jpg"},
+{id:9,name:"Muzqaymoq",cat:"Desert",price:12000,emoji:"🍨",desc:"Yoqimli shirin yakun.",image:"icecream.jpg"}
+];
 ];
 let savedProducts=JSON.parse(localStorage.getItem("lc_products")||"null");
 let products=savedProducts?savedProducts.map(p=>({...p,image:p.image||(defaultProducts.find(d=>d.id===p.id)?.image||"")})):defaultProducts;
